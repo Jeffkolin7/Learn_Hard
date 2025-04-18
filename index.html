@@ -1,40 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag and Drop Example</title>
-    <style>
-        #div1 {
-            width: 350px;
-            height: 70px;
-            padding: 10px;
-            border: 1px solid #aaaaaa;
-        }
-    </style>
+    <title>Document</title>
 </head>
-
 <body>
-    <div id="div1" ondrop="dropHandler(event)" ondragover="grabHandler(event)"></div>
-    <h1 id="text" draggable="true" ondragstart="dragStartHandler(event)">Text</h1>
+    <h1>Learn Hard to be successful one day</h1>
+    <button id="but">Show</button>
+    <h2 id="text">?</h2>
+    <script src="main.js"></script>
 </body>
-
-<script>
-    function dragStartHandler(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-
-    function grabHandler(ev) {
-        ev.preventDefault(); // Needed to allow drop
-    }
-
-    function dropHandler(ev) {
-        ev.preventDefault();
-        const data = ev.dataTransfer.getData("text");
-        const draggedElement = document.getElementById(data);
-        ev.target.appendChild(draggedElement);
-    }
-</script>
-
 </html>
